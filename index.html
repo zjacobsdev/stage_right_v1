@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PracticePal — Public Speaking Trainer (Demo)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="max-w-6xl mx-auto p-6">
+    <div class="rounded-lg overflow-hidden shadow bg-white">
+      <div class="p-6 md:flex md:items-center">
+        <div class="flex-1">
+          <h1 class="text-2xl font-semibold">PracticePal (Demo)</h1>
+          <p class="text-sm text-gray-600 mt-1">Public speaking & interview trainer — demo client-side app</p>
+        </div>
+        <div class="mt-4 md:mt-0 md:ml-6 flex items-center gap-2">
+          <button id="themeToggle" class="theme-toggle" title="Toggle theme">🌙</button>
+          <a href="session.html" class="px-4 py-2 btn-accent rounded shadow">Saved sessions</a>
+        </div>
+      </div>
+      <div class="w-full">
+        <div class="hero-image p-8">
+          <!-- lightweight hero illustration -->
+          <svg width="100%" height="160" viewBox="0 0 1200 160" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" >
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#6366f1" />
+                <stop offset="1" stop-color="#06b6d4" />
+              </linearGradient>
+            </defs>
+            <rect width="1200" height="160" fill="url(#g)" rx="8"/>
+            <text x="40" y="90" font-size="36" fill="white" font-family="sans-serif">PracticePal — Public Speaking Demo</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <section class="md:col-span-2">
+      <div class="bg-white rounded-lg shadow p-4">
+        <div class="flex flex-col md:flex-row gap-4">
+          <div class="w-full md:w-1/2">
+            <div class="mb-3 flex gap-2 items-center">
+              <div class="p-2 bg-white rounded shadow text-sm">
+                <div class="text-xs text-gray-500">View Status</div>
+                <div id="viewStatus" class="font-semibold text-sm">—</div>
+              </div>
+              <div class="p-2 bg-white rounded shadow text-sm">
+                <div class="text-xs text-gray-500">Lighting</div>
+                <div id="lightingStatus" class="font-semibold text-sm">—</div>
+              </div>
+              <div class="p-2 bg-white rounded shadow text-sm">
+                <div class="text-xs text-gray-500">Mic</div>
+                <div id="micStatus" class="font-semibold text-sm">—</div>
+              </div>
+            </div>
+            <div class="bg-black rounded overflow-hidden relative">
+              <video id="camera" autoplay playsinline muted class="w-full h-64 object-cover bg-gray-800"></video>
+              <canvas id="overlay" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+              <div id="gestureLabel" class="absolute left-2 bottom-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm pointer-events-none z-10"> </div>
+            </div>
+            <div class="mt-3 flex gap-2 items-center">
+              <button id="startBtn" class="px-3 py-2 bg-green-600 text-white rounded">Start Session</button>
+              <button id="stopBtn" class="px-3 py-2 bg-red-600 text-white rounded">Stop</button>
+              <button id="saveBtn" class="px-3 py-2 bg-indigo-600 text-white rounded">Save session</button>
+              <button id="toggleAudioBtn" class="px-3 py-2 bg-gray-200 text-gray-800 rounded">Mute</button>
+              <div id="timerContainer" class="ml-3 text-sm text-gray-700">
+                <div>Goal: <span id="goalDisplay">60s</span></div>
+                <div>Time: <span id="timerDisplay">00:00</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full md:w-1/2">
+            <div class="bg-gray-50 rounded p-3 h-64 overflow-auto">
+              <h3 class="font-semibold">Live Transcript</h3>
+              <div id="transcript" class="mt-2 text-sm text-gray-800" aria-live="polite"></div>
+            </div>
+            <div class="mt-3 grid grid-cols-3 gap-2 text-center text-sm">
+              <div class="p-2 bg-white rounded shadow">
+                <div class="text-xs text-gray-500">WPM</div>
+                <div id="wpm" class="text-lg font-semibold">0</div>
+              </div>
+              <div class="p-2 bg-white rounded shadow">
+                <div class="text-xs text-gray-500">Filler words</div>
+                <div id="fillers" class="text-lg font-semibold">0</div>
+              </div>
+              <div class="p-2 bg-white rounded shadow">
+                <div class="text-xs text-gray-500">Keywords matched</div>
+                <div id="matches" class="text-lg font-semibold">0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 bg-white rounded-lg shadow p-4">
+        <h3 class="font-semibold">Voice commands</h3>
+        <p class="text-sm text-gray-600">Supported: <code>start</code>, <code>stop</code>, <code>mute</code>, <code>unmute</code>, <code>scroll up</code>, <code>scroll down</code>.</p>
+      </div>
+    </section>
+
+    <aside>
+      <div class="bg-white rounded-lg shadow p-4 sticky top-6">
+        <h3 class="font-semibold">Notes & Presets</h3>
+        <select id="preset" class="mt-2 w-full rounded border-gray-200 p-2">
+          <option value="intro">Intro — quick elevator pitch</option>
+          <option value="project">Project pitch — problem & solution</option>
+          <option value="interview">Interview answer — STAR</option>
+          <option value="speech">Persuasive speech — call to action</option>
+        </select>
+
+        <div id="notes" class="mt-3 text-sm text-gray-800 h-40 overflow-auto p-2 bg-gray-50 rounded"></div>
+
+        <div class="mt-4">
+          <label class="text-xs text-gray-500">Goal time (seconds)</label>
+          <input id="goalTime" type="number" value="60" class="mt-1 w-full rounded border-gray-200 p-2" />
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="max-w-6xl mx-auto p-6 text-sm text-gray-500">
+    <div>Demo built using browser APIs. No data is sent to any server.</div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

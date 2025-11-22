@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PracticePal — Saved Sessions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="max-w-6xl mx-auto p-6">
+    <div class="flex items-center justify-between">
+      <div>
+        <h1 class="text-xl font-semibold">Saved Sessions</h1>
+        <p class="text-sm text-gray-600">Sessions are stored in browser localStorage (demo).</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="themeToggle" class="theme-toggle" title="Toggle theme">🌙</button>
+        <a href="index.html" class="px-3 py-2 bg-gray-200 text-gray-800 rounded">Back</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto p-6">
+    <div class="bg-white rounded-lg shadow p-4">
+      <div class="flex gap-2 mb-4">
+        <button id="exportAllJson" class="px-3 py-2 bg-indigo-600 text-white rounded">Export All JSON</button>
+        <button id="exportAllCsv" class="px-3 py-2 bg-gray-700 text-white rounded">Export All CSV</button>
+        <button id="clearAll" class="px-3 py-2 bg-red-600 text-white rounded">Clear All</button>
+        <a href="index.html" class="px-3 py-2 bg-gray-200 text-gray-800 rounded">Back</a>
+      </div>
+
+      <div id="sessionsList" class="space-y-3"></div>
+    </div>
+  </main>
+
+  <script src="js/sessions.js"></script>
+  <script src="js/theme.js"></script>
+</body>
+</html>
