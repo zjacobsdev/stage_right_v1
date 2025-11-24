@@ -8,8 +8,8 @@ A lightweight, client-side demo web app that simulates a Zoom-like practice envi
 
 - Built with MediaPipe · Tailwind · Web Speech API
 
-- Used AI AssistantS
-  - Copilot (GPT-5 mini)- build the web application with MediaPipe, Tailwind and Web Speech API.
+- Used AI Assistants:
+  - Copilot (GPT-5 mini)- build the web application with MediaPipe, Tailwind CSS and Web Speech API.
   - ShutterStock AI- ReadMe.md headline photo generation
 
 ## Quick Tips & Hand Gestures
