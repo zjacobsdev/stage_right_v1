@@ -12,6 +12,25 @@ A lightweight, client-side demo web app that simulates a Zoom-like practice envi
   - Copilot (GPT-5 mini)- build the web application with MediaPipe, Tailwind and Web Speech API.
   - ShutterStock AI- ReadMe.md headline photo generation
 
+## Quick Tips & Hand Gestures
+
+Quick practical instructions to get started fast and how the gesture controls work (placed here for easy discovery):
+
+- Recommended browser: use a Chromium-based browser (Chrome or Edge) for best Web Speech API support and MediaPipe performance.
+- Allow camera and microphone when prompted — the app runs entirely in your browser and no data leaves your machine.
+- Hand gestures (hold for ~3 seconds to trigger):
+  - Open palm → Start session
+  - Fist → Stop session
+  - Thumbs up → Save session
+  - Point (index finger) → Hold to enter scroll mode; move up/down to scroll notes.
+
+Tips for reliable detection:
+
+- Sit in front of the camera with good lighting and keep your face visible for the best "View" status and gesture reliability.
+- If speech transcription doesn't start automatically, click "Start Session" (this provides the user gesture browsers need to enable recognition).
+- Use the mic-level badge to confirm your microphone is receiving audio — it shows a small percentage indicating input level.
+
+
 ## Table of contents
 
 <p align="center">
@@ -23,7 +42,7 @@ A lightweight, client-side demo web app that simulates a Zoom-like practice envi
 - [Quickstart](#quickstart)
 - [Usage](#usage)
   - [Start a session](#start-a-session)
-  - [Voice commands](#voice-commands)
+  - [Quick tips & hand gestures](#quick-tips--hand-gestures)
   - [Hand gestures](#hand-gestures)
   - [Notes & on-topic detection](#notes--on-topic-detection)
   - [Saving & sessions](#saving--sessions)
@@ -88,25 +107,24 @@ Notes:
 - Click "Start Session" or say "start".
 - Speak naturally. The app will show a live transcript, WPM, filler-word counts, and highlight matched keywords from your selected notes.
 
-### Voice commands
+### Quick Tips & Hand Gestures
 
-Supported voice commands (partial list):
+Quick practical instructions to get started fast and how the gesture controls work (placed here for easy discovery):
 
-- "start" — start the session
-- "stop" — stop the session
-- "mute" / "unmute" — mute/unmute audio capture in the UI (demo behavior)
-- "scroll up" / "scroll down" — scroll notes
-- Other natural commands may be recognized depending on the browser's speech engine.
+- Recommended browser: use a Chromium-based browser (Chrome or Edge) for best Web Speech API support and MediaPipe performance.
+- Allow camera and microphone when prompted — the app runs entirely in your browser and no data leaves your machine.
+- Hand gestures (hold for ~3 seconds to trigger):
+  - Open palm → Start session
+  - Fist → Stop session
+  - Thumbs up → Save session
+  - Point (index finger) → Hold to enter scroll mode; move up/down to scroll notes.
 
-### Hand gestures
+Tips for reliable detection:
 
-(Heuristic demo behaviors with MediaPipe hand landmarks)
+- Sit in front of the camera with good lighting and keep your face visible for the best "View" status and gesture reliability.
+- If speech transcription doesn't start automatically, click "Start Session" (this provides the user gesture browsers need to enable recognition).
+- Use the mic-level badge to confirm your microphone is receiving audio — it shows a small percentage indicating input level.
 
-- Open palm -> Start session
-- Fist -> Stop session
-- Thumbs up -> Save session
-- Point (index finger) -> Scroll notes up/down depending on motion
-- Fast downward pull near top -> toggle camera (in demo this toggles a mute/camera state)
 
 These are heuristics and intentionally simple — not a production-grade sign-language model.
 

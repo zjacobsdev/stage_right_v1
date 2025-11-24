@@ -12,7 +12,7 @@
     <div class="rounded-lg overflow-hidden shadow bg-white">
       <div class="p-6 md:flex md:items-center">
         <div class="flex-1">
-          <h1 class="text-2xl font-semibold">PracticePal (Demo)</h1>
+          <h1 class="text-2xl font-semibold">Stage Right</h1>
           <p class="text-sm text-gray-600 mt-1">Public speaking & interview trainer — demo client-side app</p>
         </div>
         <div class="mt-4 md:mt-0 md:ml-6 flex items-center gap-2">
@@ -31,7 +31,7 @@
               </linearGradient>
             </defs>
             <rect width="1200" height="160" fill="url(#g)" rx="8"/>
-            <text x="40" y="90" font-size="36" fill="white" font-family="sans-serif">PracticePal — Public Speaking Demo</text>
+            <text x="40" y="90" font-size="36" fill="white" font-family="sans-serif">Stage Right — Public Speaking Demo</text>
           </svg>
         </div>
       </div>
@@ -41,6 +41,18 @@
   <main class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
     <section class="md:col-span-2">
       <div class="bg-white rounded-lg shadow p-4">
+        <!-- Hand gesture instructions: moved above media player and notes -->
+        <div class="mb-4 p-3 bg-gray-50 rounded">
+          <h3 class="font-semibold">Hand gesture commands (hold to trigger)</h3>
+          <p class="text-sm text-gray-600 mt-1">Use hand gestures near the camera. Hold the gesture for ~3 seconds to trigger the action.</p>
+          <ul class="text-sm text-gray-700 mt-2 list-disc list-inside">
+            <li><strong>Open palm</strong> — Start session</li>
+            <li><strong>Fist</strong> — Stop session</li>
+            <li><strong>Thumbs up</strong> — Save session</li>
+            <li><strong>Point (index)</strong> — Hold to enter scroll mode; move hand up/down to scroll notes</li>
+          </ul>
+          <p class="text-xs text-gray-500 mt-2">Tip: sit facing the camera with good lighting. If gestures don't trigger, try moving slightly closer and hold the pose steady.</p>
+        </div>
         <div class="flex flex-col md:flex-row gap-4">
           <div class="w-full md:w-1/2">
             <div class="mb-3 flex gap-2 items-center">
@@ -97,10 +109,7 @@
         </div>
       </div>
 
-      <div class="mt-6 bg-white rounded-lg shadow p-4">
-        <h3 class="font-semibold">Voice commands</h3>
-        <p class="text-sm text-gray-600">Supported: <code>start</code>, <code>stop</code>, <code>mute</code>, <code>unmute</code>, <code>scroll up</code>, <code>scroll down</code>.</p>
-      </div>
+      
     </section>
 
     <aside>
