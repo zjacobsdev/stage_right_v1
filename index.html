@@ -26,17 +26,41 @@
   <main class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
     <section class="md:col-span-2">
       <div class="bg-white rounded-lg shadow p-4">
-        <!-- Hand gesture instructions: moved above media player and notes -->
+        <!-- Permissions & indicators: explain required browser permissions and badge meanings -->
         <div class="mb-4 p-3 bg-gray-50 rounded">
-          <h3 class="font-semibold">Hand gesture commands (hold to trigger)</h3>
-          <p class="text-sm text-gray-600 mt-1">Use hand gestures near the camera. Hold the gesture for ~3 seconds to trigger the action.</p>
+          <h3 class="font-semibold">Permissions & Indicators</h3>
+          <p class="text-sm text-gray-600 mt-1">This app requires access to your <strong>camera</strong> and <strong>microphone</strong> to detect hand gestures, monitor lighting/view, and provide live transcription.</p>
           <ul class="text-sm text-gray-700 mt-2 list-disc list-inside">
-            <li><strong>Open palm</strong> — Start session</li>
-            <li><strong>Fist</strong> — Stop session</li>
-            <li><strong>Thumbs up</strong> — Save session</li>
-            <li><strong>Point (index)</strong> — Hold to enter scroll mode; move hand up/down to scroll notes</li>
+            <li>When the browser prompts, click <strong>Allow</strong> for camera and microphone access. If you deny, use the site lock icon in the address bar to reopen permissions.</li>
+            <li>If camera or mic don't appear to work, try refreshing the page after granting permissions and ensure no other app is using the devices.</li>
+            <li>For best results, sit facing the camera with steady lighting and hold gestures steadily near the camera.</li>
           </ul>
-          <p class="text-xs text-gray-500 mt-2">Tip: sit facing the camera with good lighting. If gestures don't trigger, try moving slightly closer and hold the pose steady.</p>
+
+          <details class="mt-3 bg-white border rounded">
+            <summary class="px-3 py-2 font-medium cursor-pointer">What the indicators mean</summary>
+            <div class="p-3 text-sm text-gray-700">
+              <ul class="list-disc list-inside">
+                <li><strong>View Status</strong>: shows whether your face is detected and roughly how much of the camera view you occupy — <em>Good</em>, <em>OK</em>, or <em>Poor</em>.</li>
+                <li><strong>Lighting</strong>: estimates scene brightness — <em>Good</em>, <em>OK</em>, or <em>Poor</em>. Improve lighting if it's <em>Poor</em>.</li>
+                <li><strong>Mic</strong>: shows microphone availability and whether the app is listening or detecting speech. A level percentage appears while you speak.</li>
+              </ul>
+              <p class="text-sm text-gray-600 mt-2">As you speak, keywords from the selected notes will be highlighted in the notes area so you can track how well you're hitting key points.</p>
+            </div>
+          </details>
+
+          <details class="mt-3 bg-white border rounded">
+            <summary class="px-3 py-2 font-medium cursor-pointer">Hand gesture commands (hold to trigger)</summary>
+            <div class="p-3 text-sm text-gray-700">
+              <p class="text-sm text-gray-600 mt-1">Use hand gestures near the camera. Hold the gesture for about 2 seconds to trigger the action.</p>
+              <ul class="mt-2 list-disc list-inside">
+                <li><strong>Open palm</strong> — Start session</li>
+                <li><strong>Fist</strong> — Stop session</li>
+                <li><strong>Thumbs up</strong> — Save session</li>
+                <li><strong>Point (index)</strong> — Hold to enter scroll mode; move hand up/down to scroll notes</li>
+              </ul>
+              <p class="text-xs text-gray-500 mt-2">Tip: sit facing the camera with good lighting. If gestures don't trigger, try moving slightly closer and hold the pose steady.</p>
+            </div>
+          </details>
         </div>
         <div class="flex flex-col md:flex-row gap-4">
           <div class="w-full md:w-1/2">
