@@ -2,7 +2,7 @@
   <img src="assets/public_speaking_thumbnail.png" alt="PracticePal cover" style="width:100%;max-width:1100px;height:160px;object-fit:cover;border-radius:8px;" />
 </p>
 
-# PracticePal (Demo) — Public Speaking & Interview Trainer
+# Stage Right — Public Speaking & Interview Trainer
 
 A lightweight, client-side demo web app that simulates a Zoom-like practice environment for public speaking and interview prep — built to be operated with voice and simple hand gestures (no mouse/keyboard required).
 
