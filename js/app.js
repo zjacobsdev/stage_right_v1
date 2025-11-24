@@ -479,7 +479,7 @@
       }
 
       // If we have a candidate and it's been held long enough and cooldown passed, trigger action
-      const HOLD_MS = 3000;
+      const HOLD_MS = 2000;
       const COOLDOWN_MS = 1500;
       if(detected && gestureCandidateStart && (now - gestureCandidateStart >= HOLD_MS) && now > gestureCooldownUntil){
         // perform action once
