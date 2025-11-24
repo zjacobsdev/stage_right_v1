@@ -14,6 +14,10 @@ A lightweight, client-side demo web app that simulates a Zoom-like practice envi
 
 ## Table of contents
 
+<p align="center">
+  <a href="https://stageright-mvp.netlify.app/" style="display:inline-block;padding:10px 18px;border-radius:8px;background:#6366f1;color:white;text-decoration:none;font-weight:600">▶ Live Demo — Open in browser</a>
+</p>
+
 - [Quick overview](#quick-overview)
 - [Features](#features)
 - [Quickstart](#quickstart)
