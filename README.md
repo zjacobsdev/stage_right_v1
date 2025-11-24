@@ -12,6 +12,10 @@ A lightweight, client-side demo web app that simulates a Zoom-like practice envi
   - Copilot (GPT-5 mini)- build the web application with MediaPipe, Tailwind CSS and Web Speech API.
   - ShutterStock AI- ReadMe.md headline photo generation
 
+  <p align="center">
+  <a href="https://stageright-mvp.netlify.app/" style="display:inline-block;padding:10px 18px;border-radius:8px;background:#6366f1;color:white;text-decoration:none;font-weight:600"> Live Demo — Open in browser</a>
+</p>
+
 ## Quick Tips & Hand Gestures
 
 Quick practical instructions to get started fast and how the gesture controls work (placed here for easy discovery):
@@ -32,10 +36,6 @@ Tips for reliable detection:
 
 
 ## Table of contents
-
-<p align="center">
-  <a href="https://stageright-mvp.netlify.app/" style="display:inline-block;padding:10px 18px;border-radius:8px;background:#6366f1;color:white;text-decoration:none;font-weight:600">▶ Live Demo — Open in browser</a>
-</p>
 
 - [Quick overview](#quick-overview)
 - [Features](#features)
